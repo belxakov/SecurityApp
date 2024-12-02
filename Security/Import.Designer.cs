@@ -46,6 +46,7 @@ namespace Security
             this.getFile.TabIndex = 1;
             this.getFile.Text = "Выбрать файл";
             this.getFile.UseVisualStyleBackColor = false;
+            this.getFile.Click += new System.EventHandler(this.getFile_Click);
             // 
             // recoveryData
             // 

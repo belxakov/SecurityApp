@@ -23,5 +23,18 @@ namespace Security
             MainMenu menu = new MainMenu();
             menu.Show();
         }
+
+        private void getFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog getFile = new OpenFileDialog();
+            getFile.InitialDirectory = "c:\\";
+            getFile.Filter = "CSV files (*.csv)|*.csv";
+            getFile.FilterIndex = 1;
+            getFile.RestoreDirectory = true;
+            if(getFile.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = getFile.FileName;
+            }
+        }
     }
 }
