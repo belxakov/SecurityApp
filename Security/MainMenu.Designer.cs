@@ -42,6 +42,7 @@ namespace Security
             this.memberList = new System.Windows.Forms.Button();
             this.clientList = new System.Windows.Forms.Button();
             this.listObject = new System.Windows.Forms.Button();
+            this.importData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // conclusionContract
@@ -78,7 +79,7 @@ namespace Security
             this.closeApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeApplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.closeApplication.ForeColor = System.Drawing.Color.White;
-            this.closeApplication.Location = new System.Drawing.Point(12, 285);
+            this.closeApplication.Location = new System.Drawing.Point(12, 339);
             this.closeApplication.Name = "closeApplication";
             this.closeApplication.Size = new System.Drawing.Size(195, 38);
             this.closeApplication.TabIndex = 4;
@@ -208,12 +209,27 @@ namespace Security
             this.listObject.UseVisualStyleBackColor = false;
             this.listObject.Click += new System.EventHandler(this.listObject_Click);
             // 
+            // importData
+            // 
+            this.importData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.importData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.importData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.importData.ForeColor = System.Drawing.Color.White;
+            this.importData.Location = new System.Drawing.Point(12, 281);
+            this.importData.Name = "importData";
+            this.importData.Size = new System.Drawing.Size(195, 47);
+            this.importData.TabIndex = 18;
+            this.importData.Text = "Импортировать данные";
+            this.importData.UseVisualStyleBackColor = false;
+            this.importData.Click += new System.EventHandler(this.importData_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(799, 331);
+            this.ClientSize = new System.Drawing.Size(799, 391);
+            this.Controls.Add(this.importData);
             this.Controls.Add(this.listObject);
             this.Controls.Add(this.clientList);
             this.Controls.Add(this.memberList);
@@ -253,5 +269,6 @@ namespace Security
         private System.Windows.Forms.Button memberList;
         private System.Windows.Forms.Button clientList;
         private System.Windows.Forms.Button listObject;
+        private System.Windows.Forms.Button importData;
     }
 }

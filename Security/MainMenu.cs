@@ -100,51 +100,58 @@ namespace Security
         // ================ [ BUTTONS ] ================
         private void conclusionContract_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             NewContract conclusionContract = new NewContract();
             conclusionContract.Show();
         }
 
         private void contractList_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Contracts contracts = new Contracts();
             contracts.Show();
         }
 
         private void signalList_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Incidents incidents = new Incidents();
             incidents.Show();
         }
 
         private void memberList_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Members members = new Members();
             members.Show();
         }
 
         private void closeApplication_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Auth auth = new Auth();
             auth.Show();
         }
 
         private void clientList_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Clients clients = new Clients();
             clients.Show();
         }
 
         private void listObject_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             SecurityObjects sObject = new SecurityObjects();
             sObject.Show();
+        }
+
+        private void importData_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Import import = new Import();
+            import.Show();
         }
     }
 }

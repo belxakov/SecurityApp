@@ -72,6 +72,7 @@ namespace Security
             this.saveData.TabIndex = 3;
             this.saveData.Text = "Сохранить";
             this.saveData.UseVisualStyleBackColor = false;
+            this.saveData.Click += new System.EventHandler(this.saveData_Click);
             // 
             // Import
             // 
