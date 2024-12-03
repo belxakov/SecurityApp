@@ -48,7 +48,7 @@ namespace Security
             this.boxLogin.Name = "boxLogin";
             this.boxLogin.Size = new System.Drawing.Size(304, 26);
             this.boxLogin.TabIndex = 0;
-            this.boxLogin.Text = "admin";
+            this.boxLogin.Text = "admin1";
             // 
             // boxPassword
             // 
@@ -57,7 +57,7 @@ namespace Security
             this.boxPassword.Name = "boxPassword";
             this.boxPassword.Size = new System.Drawing.Size(304, 26);
             this.boxPassword.TabIndex = 1;
-            this.boxPassword.Text = "admin";
+            this.boxPassword.Text = "admin1";
             // 
             // label1
             // 

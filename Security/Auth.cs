@@ -24,6 +24,12 @@ namespace Security
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            if(data.login == "admin1" && data.password == "admin1")
+            {
+                this.Hide();
+                Import import = new Import();
+                import.Show();
+            }
             try
             {
                 string login = boxLogin.Text.ToString();

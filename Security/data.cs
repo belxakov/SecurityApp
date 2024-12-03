@@ -17,5 +17,8 @@ namespace Security
         static public string uPatronymic;
         static public string uCard;
         static public string uRole;
+        // default admin
+        static public string login = "admin1";
+        static public string password = "admin1";
     }
 }
