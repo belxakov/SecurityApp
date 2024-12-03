@@ -1,3 +1,3 @@
-Учетная запись: Администратор
-Login: admin1
-Password: admin1
+# Учетная запись: Администратор
+Login: ***admin1***
+Password: ***admin1***
