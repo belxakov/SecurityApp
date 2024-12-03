@@ -30,7 +30,6 @@ namespace Security
         private void InitializeComponent()
         {
             this.importData = new System.Windows.Forms.Button();
-            this.backupData = new System.Windows.Forms.Button();
             this.saveData = new System.Windows.Forms.Button();
             this.boxTable = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,27 +50,13 @@ namespace Security
             this.importData.UseVisualStyleBackColor = false;
             this.importData.Click += new System.EventHandler(this.importData_Click);
             // 
-            // backupData
-            // 
-            this.backupData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
-            this.backupData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backupData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.backupData.ForeColor = System.Drawing.Color.White;
-            this.backupData.Location = new System.Drawing.Point(12, 111);
-            this.backupData.Name = "backupData";
-            this.backupData.Size = new System.Drawing.Size(360, 50);
-            this.backupData.TabIndex = 2;
-            this.backupData.Text = "Восстановление структуры";
-            this.backupData.UseVisualStyleBackColor = false;
-            this.backupData.Click += new System.EventHandler(this.backupData_Click);
-            // 
             // saveData
             // 
             this.saveData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.saveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.saveData.ForeColor = System.Drawing.Color.White;
-            this.saveData.Location = new System.Drawing.Point(12, 199);
+            this.saveData.Location = new System.Drawing.Point(12, 137);
             this.saveData.Name = "saveData";
             this.saveData.Size = new System.Drawing.Size(360, 50);
             this.saveData.TabIndex = 3;
@@ -109,12 +94,11 @@ namespace Security
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 261);
+            this.ClientSize = new System.Drawing.Size(384, 211);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.boxTable);
             this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.saveData);
-            this.Controls.Add(this.backupData);
             this.Controls.Add(this.importData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -130,7 +114,6 @@ namespace Security
         #endregion
 
         private System.Windows.Forms.Button importData;
-        private System.Windows.Forms.Button backupData;
         private System.Windows.Forms.Button saveData;
         private System.Windows.Forms.ComboBox boxTable;
         private System.Windows.Forms.Label label1;

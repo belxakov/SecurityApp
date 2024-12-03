@@ -87,6 +87,12 @@
     <Compile Include="Incidents.Designer.cs">
       <DependentUpon>Incidents.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadBackup.Designer.cs">
+      <DependentUpon>LoadBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Incidents.resx">
       <DependentUpon>Incidents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadBackup.resx">
+      <DependentUpon>LoadBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
