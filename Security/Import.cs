@@ -131,6 +131,7 @@ namespace Security
             {
                 string filePath = getFile.FileName;
                 RecoveryDatabase(filePath);
+                MessageBox.Show("Данные успешно восстановлены!");
             }
         }
         private void RecoveryDatabase(string filePath)
