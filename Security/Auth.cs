@@ -17,6 +17,7 @@ namespace Security
         {
             InitializeComponent();
             FormInit();
+            TimerInit();
             GenerateCaptha();
             boxPassword.UseSystemPasswordChar = true;
         }
@@ -25,12 +26,28 @@ namespace Security
         public int mask = 0;
         Random rand = new Random();
         string codeCaptha;
+        public Timer timer;
 
         private void FormInit()
         {
             Width = 815;
             Height = 480;
             headerText.Location = new System.Drawing.Point(31, 9);
+        }
+
+        private void TimerInit()
+        {
+            timer = new Timer();
+            timer.Interval = 10000;
+            timer.Tick += Timer_Tick;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            boxCaptha.Enabled = true;
+            completeCaptha.Enabled = true;
+            timer.Stop();
+            completeCaptha.Text = "Подтвердить";
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -110,6 +127,8 @@ namespace Security
                 {
                     MessageBox.Show("Ошибка: Неверный логин или пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Width = 1150;
+                    boxLogin.Enabled = false;
+                    boxPassword.Enabled = false;
                     headerText.Location = new System.Drawing.Point(183, 5);
                 }
             }
@@ -174,9 +193,20 @@ namespace Security
             {
                 Width = 815;
                 Height = 480;
+                boxLogin.Enabled = true;
+                boxPassword.Enabled = true;
                 boxCaptha.Text = null;
                 headerText.Location = new System.Drawing.Point(31, 9);
                 GenerateCaptha();
+            }
+            else
+            {
+                boxCaptha.Enabled = false;
+                completeCaptha.Enabled = false;
+                timer.Start();
+                GenerateCaptha();
+                completeCaptha.Text = "Ввод заблокирован";
+                MessageBox.Show("Некорректный ввод капчи! Ввод заблокирован на 10 секунд");
             }
         }
     }
