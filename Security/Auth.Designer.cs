@@ -42,7 +42,6 @@ namespace Security
             this.picBoxCaptha = new System.Windows.Forms.PictureBox();
             this.boxCaptha = new System.Windows.Forms.TextBox();
             this.updateCaptha = new System.Windows.Forms.Button();
-            this.completeCaptha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCaptha)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +115,7 @@ namespace Security
             this.headerText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.headerText.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.headerText.ForeColor = System.Drawing.Color.White;
-            this.headerText.Location = new System.Drawing.Point(183, 5);
+            this.headerText.Location = new System.Drawing.Point(126, 9);
             this.headerText.Name = "headerText";
             this.headerText.Size = new System.Drawing.Size(733, 39);
             this.headerText.TabIndex = 8;
@@ -137,7 +136,7 @@ namespace Security
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(817, 116);
+            this.label3.Location = new System.Drawing.Point(676, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(273, 20);
             this.label3.TabIndex = 10;
@@ -145,7 +144,7 @@ namespace Security
             // 
             // picBoxCaptha
             // 
-            this.picBoxCaptha.Location = new System.Drawing.Point(820, 148);
+            this.picBoxCaptha.Location = new System.Drawing.Point(679, 174);
             this.picBoxCaptha.Name = "picBoxCaptha";
             this.picBoxCaptha.Size = new System.Drawing.Size(270, 100);
             this.picBoxCaptha.TabIndex = 11;
@@ -154,7 +153,7 @@ namespace Security
             // boxCaptha
             // 
             this.boxCaptha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.boxCaptha.Location = new System.Drawing.Point(821, 265);
+            this.boxCaptha.Location = new System.Drawing.Point(680, 291);
             this.boxCaptha.Name = "boxCaptha";
             this.boxCaptha.Size = new System.Drawing.Size(270, 29);
             this.boxCaptha.TabIndex = 12;
@@ -165,7 +164,7 @@ namespace Security
             this.updateCaptha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateCaptha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.updateCaptha.ForeColor = System.Drawing.Color.White;
-            this.updateCaptha.Location = new System.Drawing.Point(820, 349);
+            this.updateCaptha.Location = new System.Drawing.Point(679, 349);
             this.updateCaptha.Name = "updateCaptha";
             this.updateCaptha.Size = new System.Drawing.Size(270, 42);
             this.updateCaptha.TabIndex = 13;
@@ -173,27 +172,12 @@ namespace Security
             this.updateCaptha.UseVisualStyleBackColor = false;
             this.updateCaptha.Click += new System.EventHandler(this.updateCaptha_Click);
             // 
-            // completeCaptha
-            // 
-            this.completeCaptha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
-            this.completeCaptha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.completeCaptha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.completeCaptha.ForeColor = System.Drawing.Color.White;
-            this.completeCaptha.Location = new System.Drawing.Point(820, 302);
-            this.completeCaptha.Name = "completeCaptha";
-            this.completeCaptha.Size = new System.Drawing.Size(270, 42);
-            this.completeCaptha.TabIndex = 14;
-            this.completeCaptha.Text = "Подтвердить";
-            this.completeCaptha.UseVisualStyleBackColor = false;
-            this.completeCaptha.Click += new System.EventHandler(this.completeCaptha_Click);
-            // 
             // Auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1134, 441);
-            this.Controls.Add(this.completeCaptha);
+            this.ClientSize = new System.Drawing.Size(992, 441);
             this.Controls.Add(this.updateCaptha);
             this.Controls.Add(this.boxCaptha);
             this.Controls.Add(this.picBoxCaptha);
@@ -233,7 +217,6 @@ namespace Security
         private System.Windows.Forms.PictureBox picBoxCaptha;
         private System.Windows.Forms.TextBox boxCaptha;
         private System.Windows.Forms.Button updateCaptha;
-        private System.Windows.Forms.Button completeCaptha;
     }
 }
 
