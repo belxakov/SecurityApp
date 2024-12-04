@@ -36,7 +36,7 @@ namespace Security
             this.label2 = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.headerText = new System.Windows.Forms.Label();
             this.boxMaskPassword = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.picBoxCaptha = new System.Windows.Forms.PictureBox();
@@ -110,17 +110,17 @@ namespace Security
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // label4
+            // headerText
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(31, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(733, 39);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "ОТДЕЛ ВНЕВЕДОМСТВЕННОЙ ОХРАНЫ";
+            this.headerText.AutoSize = true;
+            this.headerText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.headerText.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.headerText.ForeColor = System.Drawing.Color.White;
+            this.headerText.Location = new System.Drawing.Point(183, 5);
+            this.headerText.Name = "headerText";
+            this.headerText.Size = new System.Drawing.Size(733, 39);
+            this.headerText.TabIndex = 8;
+            this.headerText.Text = "ОТДЕЛ ВНЕВЕДОМСТВЕННОЙ ОХРАНЫ";
             // 
             // boxMaskPassword
             // 
@@ -137,7 +137,7 @@ namespace Security
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(846, 58);
+            this.label3.Location = new System.Drawing.Point(817, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(273, 20);
             this.label3.TabIndex = 10;
@@ -145,7 +145,7 @@ namespace Security
             // 
             // picBoxCaptha
             // 
-            this.picBoxCaptha.Location = new System.Drawing.Point(849, 90);
+            this.picBoxCaptha.Location = new System.Drawing.Point(820, 148);
             this.picBoxCaptha.Name = "picBoxCaptha";
             this.picBoxCaptha.Size = new System.Drawing.Size(270, 100);
             this.picBoxCaptha.TabIndex = 11;
@@ -154,7 +154,7 @@ namespace Security
             // boxCaptha
             // 
             this.boxCaptha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.boxCaptha.Location = new System.Drawing.Point(849, 210);
+            this.boxCaptha.Location = new System.Drawing.Point(821, 265);
             this.boxCaptha.Name = "boxCaptha";
             this.boxCaptha.Size = new System.Drawing.Size(270, 29);
             this.boxCaptha.TabIndex = 12;
@@ -165,7 +165,7 @@ namespace Security
             this.updateCaptha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateCaptha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.updateCaptha.ForeColor = System.Drawing.Color.White;
-            this.updateCaptha.Location = new System.Drawing.Point(849, 261);
+            this.updateCaptha.Location = new System.Drawing.Point(820, 349);
             this.updateCaptha.Name = "updateCaptha";
             this.updateCaptha.Size = new System.Drawing.Size(270, 42);
             this.updateCaptha.TabIndex = 13;
@@ -178,26 +178,27 @@ namespace Security
             this.completeCaptha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.completeCaptha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.completeCaptha.ForeColor = System.Drawing.Color.White;
-            this.completeCaptha.Location = new System.Drawing.Point(849, 315);
+            this.completeCaptha.Location = new System.Drawing.Point(820, 302);
             this.completeCaptha.Name = "completeCaptha";
             this.completeCaptha.Size = new System.Drawing.Size(270, 42);
             this.completeCaptha.TabIndex = 14;
             this.completeCaptha.Text = "Подтвердить";
             this.completeCaptha.UseVisualStyleBackColor = false;
+            this.completeCaptha.Click += new System.EventHandler(this.completeCaptha_Click);
             // 
             // Auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1144, 441);
+            this.ClientSize = new System.Drawing.Size(1134, 441);
             this.Controls.Add(this.completeCaptha);
             this.Controls.Add(this.updateCaptha);
             this.Controls.Add(this.boxCaptha);
             this.Controls.Add(this.picBoxCaptha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.boxMaskPassword);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.headerText);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.label2);
@@ -225,7 +226,7 @@ namespace Security
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label headerText;
         private System.Windows.Forms.CheckBox boxMaskPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox picBoxCaptha;

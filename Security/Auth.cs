@@ -30,6 +30,7 @@ namespace Security
         {
             Width = 815;
             Height = 480;
+            headerText.Location = new System.Drawing.Point(31, 9);
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -100,14 +101,16 @@ namespace Security
                     else
                     {
                         MessageBox.Show("Ошибка: Неверный логин или пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Width = 1160;
+                        Width = 1150;
+                        headerText.Location = new System.Drawing.Point(183, 5);
                     }
                     connect.Close();
                 }
                 catch
                 {
                     MessageBox.Show("Ошибка: Неверный логин или пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Width = 1160;
+                    Width = 1150;
+                    headerText.Location = new System.Drawing.Point(183, 5);
                 }
             }
         }
@@ -162,6 +165,18 @@ namespace Security
                     graph.ResetTransform();
                 }
                 picBoxCaptha.Image = img;
+            }
+        }
+
+        private void completeCaptha_Click(object sender, EventArgs e)
+        {
+            if (boxCaptha.Text == codeCaptha)
+            {
+                Width = 815;
+                Height = 480;
+                boxCaptha.Text = null;
+                headerText.Location = new System.Drawing.Point(31, 9);
+                GenerateCaptha();
             }
         }
     }
