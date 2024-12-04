@@ -39,9 +39,10 @@ namespace Security
             this.headerText = new System.Windows.Forms.Label();
             this.boxMaskPassword = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.picBoxCaptha = new System.Windows.Forms.PictureBox();
             this.boxCaptha = new System.Windows.Forms.TextBox();
             this.updateCaptha = new System.Windows.Forms.Button();
+            this.checkData = new System.Windows.Forms.Button();
+            this.picBoxCaptha = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCaptha)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +116,7 @@ namespace Security
             this.headerText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.headerText.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.headerText.ForeColor = System.Drawing.Color.White;
-            this.headerText.Location = new System.Drawing.Point(126, 9);
+            this.headerText.Location = new System.Drawing.Point(116, 9);
             this.headerText.Name = "headerText";
             this.headerText.Size = new System.Drawing.Size(733, 39);
             this.headerText.TabIndex = 8;
@@ -136,24 +137,16 @@ namespace Security
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(676, 142);
+            this.label3.Location = new System.Drawing.Point(635, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(273, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Подтвердите, что вы не робот";
             // 
-            // picBoxCaptha
-            // 
-            this.picBoxCaptha.Location = new System.Drawing.Point(679, 174);
-            this.picBoxCaptha.Name = "picBoxCaptha";
-            this.picBoxCaptha.Size = new System.Drawing.Size(270, 100);
-            this.picBoxCaptha.TabIndex = 11;
-            this.picBoxCaptha.TabStop = false;
-            // 
             // boxCaptha
             // 
             this.boxCaptha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.boxCaptha.Location = new System.Drawing.Point(680, 291);
+            this.boxCaptha.Location = new System.Drawing.Point(639, 265);
             this.boxCaptha.Name = "boxCaptha";
             this.boxCaptha.Size = new System.Drawing.Size(270, 29);
             this.boxCaptha.TabIndex = 12;
@@ -164,7 +157,7 @@ namespace Security
             this.updateCaptha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateCaptha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.updateCaptha.ForeColor = System.Drawing.Color.White;
-            this.updateCaptha.Location = new System.Drawing.Point(679, 349);
+            this.updateCaptha.Location = new System.Drawing.Point(638, 302);
             this.updateCaptha.Name = "updateCaptha";
             this.updateCaptha.Size = new System.Drawing.Size(270, 42);
             this.updateCaptha.TabIndex = 13;
@@ -172,12 +165,35 @@ namespace Security
             this.updateCaptha.UseVisualStyleBackColor = false;
             this.updateCaptha.Click += new System.EventHandler(this.updateCaptha_Click);
             // 
+            // checkData
+            // 
+            this.checkData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.checkData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkData.ForeColor = System.Drawing.Color.White;
+            this.checkData.Location = new System.Drawing.Point(639, 349);
+            this.checkData.Name = "checkData";
+            this.checkData.Size = new System.Drawing.Size(270, 42);
+            this.checkData.TabIndex = 14;
+            this.checkData.Text = "Авторизоваться";
+            this.checkData.UseVisualStyleBackColor = false;
+            this.checkData.Click += new System.EventHandler(this.checkData_Click);
+            // 
+            // picBoxCaptha
+            // 
+            this.picBoxCaptha.Location = new System.Drawing.Point(638, 148);
+            this.picBoxCaptha.Name = "picBoxCaptha";
+            this.picBoxCaptha.Size = new System.Drawing.Size(270, 100);
+            this.picBoxCaptha.TabIndex = 11;
+            this.picBoxCaptha.TabStop = false;
+            // 
             // Auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(992, 441);
+            this.ClientSize = new System.Drawing.Size(984, 441);
+            this.Controls.Add(this.checkData);
             this.Controls.Add(this.updateCaptha);
             this.Controls.Add(this.boxCaptha);
             this.Controls.Add(this.picBoxCaptha);
@@ -214,9 +230,10 @@ namespace Security
         private System.Windows.Forms.Label headerText;
         private System.Windows.Forms.CheckBox boxMaskPassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox picBoxCaptha;
         private System.Windows.Forms.TextBox boxCaptha;
         private System.Windows.Forms.Button updateCaptha;
+        private System.Windows.Forms.Button checkData;
+        private System.Windows.Forms.PictureBox picBoxCaptha;
     }
 }
 

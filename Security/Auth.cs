@@ -18,7 +18,6 @@ namespace Security
             InitializeComponent();
             FormInit();
             TimerInit();
-            GenerateCaptha();
             boxPassword.UseSystemPasswordChar = true;
         }
 
@@ -33,6 +32,11 @@ namespace Security
             Width = 815;
             Height = 480;
             headerText.Location = new System.Drawing.Point(31, 9);
+            boxCaptha.Visible = false;
+            label3.Visible = false;
+            updateCaptha.Visible = false;
+            checkData.Visible = false;
+            picBoxCaptha.Visible = false;
             return;
         }
 
@@ -47,35 +51,40 @@ namespace Security
         private void Timer_Tick(object sender, EventArgs e)
         {
             boxCaptha.Enabled = true;
-            buttonLogin.Enabled = true;
-            buttonLogin.Text = "Авторизоваться";
+            checkData.Enabled = true;
+            boxLogin.Enabled = true;
+            boxPassword.Enabled = true;
+            checkData.Text = "Авторизоваться";
             timer.Stop();
             return;
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if(boxLogin.Text == "admin1" && boxPassword.Text == "admin1")
+            if(boxLogin.Text == "admin1")
             {
-               
-                    if (boxCaptha.Text == codeCaptha)
-                    {
-                        this.Hide();
-                        LoadBackup backup = new LoadBackup();
-                        backup.Show();
-                    }
-                    else
-                    {
-                        boxCaptha.Enabled = false;
-                        buttonLogin.Enabled = false;
-                        timer.Start();
-                        GenerateCaptha();
-                        buttonLogin.Text = "Ввод заблокирован";
-                        boxCaptha.Text = null;
-                        boxLogin.Text = null;
-                        boxPassword.Text = null;
-                        MessageBox.Show("Некорректный ввод капчи! Ввод заблокирован на 10 секунд");
-                    }
+                if(boxPassword.Text == "admin1")
+                {
+                    this.Hide();
+                    LoadBackup backup = new LoadBackup();
+                    backup.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный логин или пароль! Введите капчу");
+                    Width = 1000;
+                    buttonLogin.Enabled = false;
+                    boxLogin.Text = null;
+                    boxPassword.Text = null;
+                    boxCaptha.Text = null;
+                    boxCaptha.Visible = true;
+                    label3.Visible = true;
+                    updateCaptha.Visible = true;
+                    checkData.Visible = true;
+                    picBoxCaptha.Visible = true;
+                    GenerateCaptha();
+                    headerText.Location = new System.Drawing.Point(116, 9);
+                }
             }
             else
             {
@@ -137,24 +146,24 @@ namespace Security
                     else
                     {
                         MessageBox.Show("Ошибка: Неверный логин или пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Width = 1150;
+                        Width = 1000;
                         boxLogin.Text = null;
                         boxPassword.Text = null;
                         boxCaptha.Text = null;
                         GenerateCaptha();
-                        headerText.Location = new System.Drawing.Point(183, 5);
+                        headerText.Location = new System.Drawing.Point(116, 9);
                     }
                     connect.Close();
                 }
                 catch
                 {
                     MessageBox.Show("Ошибка: Неверный логин или пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Width = 1150;
+                    Width = 1000;
                     boxLogin.Text = null;
                     boxPassword.Text = null;
                     boxCaptha.Text = null;
                     GenerateCaptha();
-                    headerText.Location = new System.Drawing.Point(183, 5);
+                    headerText.Location = new System.Drawing.Point(116, 9);
                 }
             }
             return;
@@ -218,7 +227,46 @@ namespace Security
         private void updateCaptha_Click(object sender, EventArgs e)
         {
             GenerateCaptha();
+            
             return;
+        }
+
+        private void checkData_Click(object sender, EventArgs e)
+        {
+            if (boxCaptha.Text == codeCaptha)
+            {
+                if(boxLogin.Text == "admin1" && boxPassword.Text == "admin1")
+                {
+                    this.Hide();
+                    LoadBackup backup = new LoadBackup();
+                    backup.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный логин или пароль!");
+                    boxCaptha.Enabled = false;
+                    checkData.Enabled = false;
+                    boxLogin.Enabled = false;
+                    boxPassword.Enabled = false;
+                    GenerateCaptha();
+                    boxCaptha.Text = null;
+                    timer.Start();
+                }
+            }
+            else
+            {
+                boxCaptha.Enabled = false;
+                checkData.Enabled = false;
+                boxLogin.Enabled = false;
+                boxPassword.Enabled = false;
+                timer.Start();
+                GenerateCaptha();
+                checkData.Text = "Ввод заблокирован";
+                boxCaptha.Text = null;
+                boxLogin.Text = null;
+                boxPassword.Text = null;
+                MessageBox.Show("Некорректный ввод капчи! Ввод заблокирован на 10 секунд");
+            }
         }
     }
 }
