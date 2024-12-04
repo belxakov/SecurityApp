@@ -33,6 +33,7 @@ namespace Security
             Width = 815;
             Height = 480;
             headerText.Location = new System.Drawing.Point(31, 9);
+            return;
         }
 
         private void TimerInit()
@@ -40,6 +41,7 @@ namespace Security
             timer = new Timer();
             timer.Interval = 10000;
             timer.Tick += Timer_Tick;
+            return;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -48,6 +50,7 @@ namespace Security
             completeCaptha.Enabled = true;
             timer.Stop();
             completeCaptha.Text = "Подтвердить";
+            return;
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -132,6 +135,7 @@ namespace Security
                     headerText.Location = new System.Drawing.Point(183, 5);
                 }
             }
+            return;
         }
 
         private void boxMaskPassword_CheckedChanged(object sender, EventArgs e)
@@ -145,6 +149,7 @@ namespace Security
             {
                 boxPassword.UseSystemPasswordChar = true;
             }
+            return;
         }
 
         // [CAPTHA]
@@ -185,6 +190,7 @@ namespace Security
                 }
                 picBoxCaptha.Image = img;
             }
+            return;
         }
 
         private void completeCaptha_Click(object sender, EventArgs e)
@@ -208,6 +214,13 @@ namespace Security
                 completeCaptha.Text = "Ввод заблокирован";
                 MessageBox.Show("Некорректный ввод капчи! Ввод заблокирован на 10 секунд");
             }
+            return;
+        }
+
+        private void updateCaptha_Click(object sender, EventArgs e)
+        {
+            GenerateCaptha();
+            return;
         }
     }
 }

@@ -171,6 +171,7 @@ namespace Security
             this.updateCaptha.TabIndex = 13;
             this.updateCaptha.Text = "Обновить";
             this.updateCaptha.UseVisualStyleBackColor = false;
+            this.updateCaptha.Click += new System.EventHandler(this.updateCaptha_Click);
             // 
             // completeCaptha
             // 
