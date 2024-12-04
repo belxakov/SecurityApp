@@ -126,10 +126,21 @@ namespace Security
         }
 
         // [CAPTHA]
-
+        public string GenerateCodeCaptha(int length)
+        {
+            // генерация кода
+            const string symbols = "abcdefghijklmnopqrstuvwxyz0123456789";
+            char[] code = new char[length];
+            for (int i = 0; i < length; i++)
+            {
+                code[i] = symbols[rand.Next(symbols.Length)];
+            }
+            return new string(code);
+        }
         private void GenerateCaptha()
         {
             picBoxCaptha.Visible = true;
+            codeCaptha = GenerateCodeCaptha(4);
             Bitmap img = new Bitmap(270, 100);
             using (Graphics graph = Graphics.FromImage(img)) // отрисовка
             {
@@ -140,8 +151,18 @@ namespace Security
                     int posY = rand.Next(0, img.Height);
                     graph.FillEllipse(Brushes.LightGray, posX, posY, 5, 5); // (цвет кисти, коорд X Y, ширина, высота)
                 }
+                for (int i = 0; i < codeCaptha.Length; i++)
+                {
+                    Font font = new Font("Arial", 24 + rand.Next(10, 50));
+                    Brush brush = Brushes.Black;
+                    float angle = rand.Next(-30, 30);
+                    graph.TranslateTransform(i * 40 + 10, rand.Next(10, 50));
+                    graph.RotateTransform(angle);
+                    graph.DrawString(codeCaptha[i].ToString(), font, brush, 0, 0);
+                    graph.ResetTransform();
+                }
+                picBoxCaptha.Image = img;
             }
-            picBoxCaptha.Image = img;
         }
     }
 }
