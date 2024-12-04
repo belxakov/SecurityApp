@@ -16,15 +16,24 @@ namespace Security
         public Auth()
         {
             InitializeComponent();
+            FormInit();
             boxPassword.UseSystemPasswordChar = true;
         }
 
         string connectionString = data.connectionString;
         public int mask = 0;
+        Random rand = new Random();
+        string codeCaptha;
+
+        private void FormInit()
+        {
+            Width = 815;
+            Height = 480;
+        }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if(data.login == "admin1" && data.password == "admin1")
+            if(boxLogin.Text == "admin1" && boxPassword.Text == "admin1")
             {
                 this.Hide();
                 LoadBackup backup = new LoadBackup();
@@ -99,7 +108,6 @@ namespace Security
                 }
             }
         }
-            
 
         private void boxMaskPassword_CheckedChanged(object sender, EventArgs e)
         {
@@ -113,5 +121,7 @@ namespace Security
                 boxPassword.UseSystemPasswordChar = true;
             }
         }
+
+        
     }
 }

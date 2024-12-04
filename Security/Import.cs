@@ -82,7 +82,7 @@ namespace Security
                         }
                         else
                         {
-                            var values = line.Split(';'); // разделитель
+                            var values = line.Split(';');
                             string query = string.Empty;
                             switch (tablename)
                             {
@@ -116,38 +116,6 @@ namespace Security
                     MessageBox.Show($"Данные успешно импортированы! Добавлено записей: {count}");
                 }
                 connect.Close();
-            }
-        }
-
-        private void backupData_Click(object sender, EventArgs e)
-        {
-            // Выбор файла
-            OpenFileDialog getFile = new OpenFileDialog();
-            getFile.InitialDirectory = "c:\\";
-            getFile.Filter = "SQL files (*.sql)|*.sql";
-            getFile.FilterIndex = 1;
-            getFile.RestoreDirectory = true;
-            if (getFile.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = getFile.FileName;
-                RecoveryDatabase(filePath);
-                MessageBox.Show("Данные успешно восстановлены!");
-            }
-        }
-        private void RecoveryDatabase(string filePath)
-        {
-            string script = File.ReadAllText(filePath);
-            InsertData(script);
-        }
-        private long InsertData(string query)
-        {
-            using(MySqlConnection con = new MySqlConnection(connectionString))
-            {
-                con.Open();
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                return cmd.LastInsertedId;
             }
         }
     }

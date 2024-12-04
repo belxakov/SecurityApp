@@ -30,6 +30,7 @@ namespace Security
         private void InitializeComponent()
         {
             this.backupData = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // backupData
@@ -46,11 +47,26 @@ namespace Security
             this.backupData.UseVisualStyleBackColor = false;
             this.backupData.Click += new System.EventHandler(this.backupData_Click);
             // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.closeButton.ForeColor = System.Drawing.Color.White;
+            this.closeButton.Location = new System.Drawing.Point(12, 82);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(360, 50);
+            this.closeButton.TabIndex = 4;
+            this.closeButton.Text = "Выход";
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
             // LoadBackup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 111);
+            this.ClientSize = new System.Drawing.Size(384, 167);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.backupData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -65,5 +81,6 @@ namespace Security
         #endregion
 
         private System.Windows.Forms.Button backupData;
+        private System.Windows.Forms.Button closeButton;
     }
 }

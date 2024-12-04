@@ -38,7 +38,13 @@ namespace Security
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.boxMaskPassword = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.picBoxCaptha = new System.Windows.Forms.PictureBox();
+            this.boxCaptha = new System.Windows.Forms.TextBox();
+            this.updateCaptha = new System.Windows.Forms.Button();
+            this.completeCaptha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCaptha)).BeginInit();
             this.SuspendLayout();
             // 
             // boxLogin
@@ -127,12 +133,69 @@ namespace Security
             this.boxMaskPassword.UseVisualStyleBackColor = true;
             this.boxMaskPassword.CheckedChanged += new System.EventHandler(this.boxMaskPassword_CheckedChanged);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(846, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(273, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Подтвердите, что вы не робот";
+            // 
+            // picBoxCaptha
+            // 
+            this.picBoxCaptha.Location = new System.Drawing.Point(849, 90);
+            this.picBoxCaptha.Name = "picBoxCaptha";
+            this.picBoxCaptha.Size = new System.Drawing.Size(270, 100);
+            this.picBoxCaptha.TabIndex = 11;
+            this.picBoxCaptha.TabStop = false;
+            // 
+            // boxCaptha
+            // 
+            this.boxCaptha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.boxCaptha.Location = new System.Drawing.Point(849, 210);
+            this.boxCaptha.Name = "boxCaptha";
+            this.boxCaptha.Size = new System.Drawing.Size(270, 29);
+            this.boxCaptha.TabIndex = 12;
+            // 
+            // updateCaptha
+            // 
+            this.updateCaptha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.updateCaptha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateCaptha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.updateCaptha.ForeColor = System.Drawing.Color.White;
+            this.updateCaptha.Location = new System.Drawing.Point(849, 261);
+            this.updateCaptha.Name = "updateCaptha";
+            this.updateCaptha.Size = new System.Drawing.Size(270, 42);
+            this.updateCaptha.TabIndex = 13;
+            this.updateCaptha.Text = "Обновить";
+            this.updateCaptha.UseVisualStyleBackColor = false;
+            // 
+            // completeCaptha
+            // 
+            this.completeCaptha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.completeCaptha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.completeCaptha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.completeCaptha.ForeColor = System.Drawing.Color.White;
+            this.completeCaptha.Location = new System.Drawing.Point(849, 315);
+            this.completeCaptha.Name = "completeCaptha";
+            this.completeCaptha.Size = new System.Drawing.Size(270, 42);
+            this.completeCaptha.TabIndex = 14;
+            this.completeCaptha.Text = "Подтвердить";
+            this.completeCaptha.UseVisualStyleBackColor = false;
+            // 
             // Auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(799, 441);
+            this.ClientSize = new System.Drawing.Size(1145, 441);
+            this.Controls.Add(this.completeCaptha);
+            this.Controls.Add(this.updateCaptha);
+            this.Controls.Add(this.boxCaptha);
+            this.Controls.Add(this.picBoxCaptha);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.boxMaskPassword);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
@@ -148,6 +211,7 @@ namespace Security
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Отдел вневедомственной охраны: Авторизация";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCaptha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,6 +227,11 @@ namespace Security
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox boxMaskPassword;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox picBoxCaptha;
+        private System.Windows.Forms.TextBox boxCaptha;
+        private System.Windows.Forms.Button updateCaptha;
+        private System.Windows.Forms.Button completeCaptha;
     }
 }
 
