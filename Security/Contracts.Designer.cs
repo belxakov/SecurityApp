@@ -49,6 +49,8 @@ namespace Security
             this.countContracts = new System.Windows.Forms.Label();
             this.navLink = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.buttonNext = new System.Windows.Forms.Label();
+            this.buttonBack = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageFilter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageNoFilter)).BeginInit();
@@ -246,12 +248,34 @@ namespace Security
             this.label6.TabIndex = 20;
             this.label6.Text = "1";
             // 
+            // buttonNext
+            // 
+            this.buttonNext.AutoSize = true;
+            this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNext.Location = new System.Drawing.Point(479, 425);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(26, 13);
+            this.buttonNext.TabIndex = 21;
+            this.buttonNext.Text = "--->";
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.AutoSize = true;
+            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBack.Location = new System.Drawing.Point(377, 425);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(26, 13);
+            this.buttonBack.TabIndex = 22;
+            this.buttonBack.Text = "<---";
+            // 
             // Contracts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(984, 461);
+            this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.navLink);
             this.Controls.Add(this.countContracts);
@@ -302,5 +326,7 @@ namespace Security
         private System.Windows.Forms.Label countContracts;
         private System.Windows.Forms.Label navLink;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label buttonNext;
+        private System.Windows.Forms.Label buttonBack;
     }
 }

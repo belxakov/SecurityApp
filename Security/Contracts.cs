@@ -21,6 +21,7 @@ namespace Security
             boxClient.Items.Add("Все клиенты");
             TypeObject();
             Client();
+            Pagination();
             labNameObj.Visible = false;
             labTypeObj.Visible = false;
             labSort.Visible = false;
@@ -58,7 +59,25 @@ namespace Security
             }
         }
 
-        
+        private void Pagination()
+        {   // == [ Количество записей ] ==
+            using (MySqlConnection connect = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM contract";
+                MySqlCommand cmd = new MySqlCommand(query, connect);
+                try
+                {
+                    connect.Open();
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    countContracts.Text = $"Количество записей: {count}";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error! {ex.Message}");
+                }
+            }
+
+        }
 
         private void goMenu_Click(object sender, EventArgs e)
         {
