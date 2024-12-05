@@ -46,8 +46,9 @@ namespace Security
             this.boxClient = new System.Windows.Forms.ComboBox();
             this.labClient = new System.Windows.Forms.Label();
             this.boxNameObj = new System.Windows.Forms.TextBox();
-            this.printContract = new System.Windows.Forms.Button();
-            this.buttonEdit = new System.Windows.Forms.Button();
+            this.countContracts = new System.Windows.Forms.Label();
+            this.navLink = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageFilter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageNoFilter)).BeginInit();
@@ -73,7 +74,6 @@ namespace Security
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 25, 5, 25);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -81,7 +81,7 @@ namespace Security
             this.dataGridView1.Location = new System.Drawing.Point(16, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(956, 356);
+            this.dataGridView1.Size = new System.Drawing.Size(956, 367);
             this.dataGridView1.TabIndex = 0;
             // 
             // goMenu
@@ -216,32 +216,35 @@ namespace Security
             this.boxNameObj.TabIndex = 14;
             this.boxNameObj.TextChanged += new System.EventHandler(this.boxNameObj_TextChanged);
             // 
-            // printContract
+            // countContracts
             // 
-            this.printContract.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
-            this.printContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.printContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.printContract.ForeColor = System.Drawing.Color.White;
-            this.printContract.Location = new System.Drawing.Point(464, 411);
-            this.printContract.Name = "printContract";
-            this.printContract.Size = new System.Drawing.Size(191, 38);
-            this.printContract.TabIndex = 15;
-            this.printContract.Text = "Распечатать договор";
-            this.printContract.UseVisualStyleBackColor = false;
+            this.countContracts.AutoSize = true;
+            this.countContracts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.countContracts.Location = new System.Drawing.Point(13, 411);
+            this.countContracts.Name = "countContracts";
+            this.countContracts.Size = new System.Drawing.Size(170, 16);
+            this.countContracts.TabIndex = 15;
+            this.countContracts.Text = "Количество записей: ";
             // 
-            // buttonEdit
+            // navLink
             // 
-            this.buttonEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
-            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonEdit.ForeColor = System.Drawing.Color.White;
-            this.buttonEdit.Location = new System.Drawing.Point(267, 411);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(191, 38);
-            this.buttonEdit.TabIndex = 16;
-            this.buttonEdit.Text = "Редактировать";
-            this.buttonEdit.UseVisualStyleBackColor = false;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            this.navLink.AutoSize = true;
+            this.navLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.navLink.Location = new System.Drawing.Point(16, 436);
+            this.navLink.Name = "navLink";
+            this.navLink.Size = new System.Drawing.Size(14, 13);
+            this.navLink.TabIndex = 16;
+            this.navLink.Text = "1";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(430, 420);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(19, 20);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "1";
             // 
             // Contracts
             // 
@@ -249,8 +252,9 @@ namespace Security
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(984, 461);
-            this.Controls.Add(this.buttonEdit);
-            this.Controls.Add(this.printContract);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.navLink);
+            this.Controls.Add(this.countContracts);
             this.Controls.Add(this.boxNameObj);
             this.Controls.Add(this.boxTypeSec);
             this.Controls.Add(this.labTypeSec);
@@ -295,7 +299,8 @@ namespace Security
         private System.Windows.Forms.ComboBox boxClient;
         private System.Windows.Forms.Label labClient;
         private System.Windows.Forms.TextBox boxNameObj;
-        private System.Windows.Forms.Button printContract;
-        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Label countContracts;
+        private System.Windows.Forms.Label navLink;
+        private System.Windows.Forms.Label label6;
     }
 }

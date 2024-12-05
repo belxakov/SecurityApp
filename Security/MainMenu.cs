@@ -55,16 +55,7 @@ namespace Security
             signalList.Visible = false;
             memberList.Visible = false;
             clientList.Visible = false;
-            listObject.Visible = false;
-            if (data.uRole == "1")
-            {
-                // visible
-                listObject.Visible = true;
-                // location
-                listObject.Location = new System.Drawing.Point(12, 14);
-                closeApplication.Location = new System.Drawing.Point(12, 67);
-            }
-            else if(data.uRole == "2")
+            if(data.uRole == "2")
             {
                 // visible
                 signalList.Visible = true;

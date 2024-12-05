@@ -24,7 +24,9 @@ namespace Security
 
         private void saveData_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            MainMenu menu = new MainMenu();
+            menu.Show();
         }
 
         private void GetTables()

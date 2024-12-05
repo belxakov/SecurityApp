@@ -20,7 +20,6 @@ namespace Security
             boxTypeObj.Items.Add("Все объекты");
             boxClient.Items.Add("Все клиенты");
             TypeObject();
-         // NameObject();
             Client();
             labNameObj.Visible = false;
             labTypeObj.Visible = false;
@@ -58,6 +57,8 @@ namespace Security
                 MessageBox.Show(ex.Message);
             }
         }
+
+        
 
         private void goMenu_Click(object sender, EventArgs e)
         {

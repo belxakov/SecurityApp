@@ -41,7 +41,6 @@ namespace Security
             this.labStatus = new System.Windows.Forms.Label();
             this.memberList = new System.Windows.Forms.Button();
             this.clientList = new System.Windows.Forms.Button();
-            this.listObject = new System.Windows.Forms.Button();
             this.importData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -195,20 +194,6 @@ namespace Security
             this.clientList.UseVisualStyleBackColor = false;
             this.clientList.Click += new System.EventHandler(this.clientList_Click);
             // 
-            // listObject
-            // 
-            this.listObject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
-            this.listObject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.listObject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listObject.ForeColor = System.Drawing.Color.White;
-            this.listObject.Location = new System.Drawing.Point(12, 16);
-            this.listObject.Name = "listObject";
-            this.listObject.Size = new System.Drawing.Size(195, 47);
-            this.listObject.TabIndex = 17;
-            this.listObject.Text = "Просмотр объектов";
-            this.listObject.UseVisualStyleBackColor = false;
-            this.listObject.Click += new System.EventHandler(this.listObject_Click);
-            // 
             // importData
             // 
             this.importData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
@@ -230,7 +215,6 @@ namespace Security
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(799, 391);
             this.Controls.Add(this.importData);
-            this.Controls.Add(this.listObject);
             this.Controls.Add(this.clientList);
             this.Controls.Add(this.memberList);
             this.Controls.Add(this.labStatus);
@@ -268,7 +252,6 @@ namespace Security
         private System.Windows.Forms.Label labStatus;
         private System.Windows.Forms.Button memberList;
         private System.Windows.Forms.Button clientList;
-        private System.Windows.Forms.Button listObject;
         private System.Windows.Forms.Button importData;
     }
 }
