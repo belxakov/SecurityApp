@@ -21,7 +21,6 @@ namespace Security
             boxClient.Items.Add("Все клиенты");
             TypeObject();
             Client();
-            Pagination();
             labNameObj.Visible = false;
             labTypeObj.Visible = false;
             labSort.Visible = false;
@@ -39,6 +38,9 @@ namespace Security
         }
 
         string connectionString = data.connectionString;
+        public int minSearch = 0;
+        public int maxSerach = 20;
+        public int countRow;
 
         private void InfoContracts()
         {
@@ -46,37 +48,20 @@ namespace Security
             {
                 MySqlConnection connect = new MySqlConnection(connectionString);
                 connect.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract", connect);
+                MySqlCommand cmd = new MySqlCommand($"SELECT id, client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract LIMIT {minSearch}, {maxSerach}", connect);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
                 dataGridView1.DataSource = table;
+                this.dataGridView1.Columns["id"].Visible = false;
+                countRow = dataGridView1.RowCount;
+                countContracts.Text = $"Количество строк: {countRow}";
                 connect.Close();
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void Pagination()
-        {   // == [ Количество записей ] ==
-            using (MySqlConnection connect = new MySqlConnection(connectionString))
-            {
-                string query = "SELECT COUNT(*) FROM contract";
-                MySqlCommand cmd = new MySqlCommand(query, connect);
-                try
-                {
-                    connect.Open();
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    countContracts.Text = $"Количество записей: {count}";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error! {ex.Message}");
-                }
-            }
-
         }
 
         private void goMenu_Click(object sender, EventArgs e)
@@ -135,7 +120,7 @@ namespace Security
                 try
                 {
                     connect.Open();
-                    MySqlCommand sort = new MySqlCommand($"SELECT client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract ORDER BY status {sortStatus}", connect);
+                    MySqlCommand sort = new MySqlCommand($"SELECT client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract ORDER BY status {sortStatus} LIMIT {minSearch}, {maxSerach}", connect);
                     sort.ExecuteNonQuery();
                     MySqlDataAdapter adapter = new MySqlDataAdapter(sort);
                     DataTable table = new DataTable();
@@ -207,7 +192,7 @@ namespace Security
                 try
                 {
                     connect.Open();
-                    MySqlCommand filterObject = new MySqlCommand($"SELECT client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract WHERE type_object LIKE @typeObject", connect);
+                    MySqlCommand filterObject = new MySqlCommand($"SELECT id, client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract WHERE type_object LIKE @typeObject LIMIT {minSearch}, {maxSerach}", connect);
                     filterObject.Parameters.AddWithValue("@typeObject", typeObject);
                     filterObject.ExecuteNonQuery();
                     MySqlDataAdapter adapter = new MySqlDataAdapter(filterObject);
@@ -218,6 +203,9 @@ namespace Security
                     {
                         InfoContracts();
                     }
+                    this.dataGridView1.Columns["id"].Visible = false;
+                    countRow = dataGridView1.RowCount;
+                    countContracts.Text = $"Количество строк: {countRow}";
                     connect.Close();
                 }
                 catch (Exception ex)
@@ -233,7 +221,7 @@ namespace Security
                 try
                 {
                     connect.Open();
-                    MySqlCommand filterObject = new MySqlCommand($"SELECT client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract WHERE name_object LIKE @nameObject", connect);
+                    MySqlCommand filterObject = new MySqlCommand($"SELECT id, client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract WHERE name_object LIKE @nameObject LIMIT {minSearch}, {maxSerach}", connect);
                     filterObject.Parameters.AddWithValue("@nameObject", nameObject);
                     filterObject.ExecuteNonQuery();
                     MySqlDataAdapter adapter = new MySqlDataAdapter(filterObject);
@@ -244,6 +232,9 @@ namespace Security
                     {
                         InfoContracts();
                     }
+                    this.dataGridView1.Columns["id"].Visible = false;
+                    countRow = dataGridView1.RowCount;
+                    countContracts.Text = $"Количество строк: {countRow}";
                     connect.Close();
                 }
                 catch (Exception ex)
@@ -259,13 +250,16 @@ namespace Security
                 try
                 {
                     connect.Open();
-                    string query = "SELECT  client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract WHERE name_object LIKE @nameObject";
+                    string query = $"SELECT id, client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract WHERE name_object LIKE @nameObject LIMIT {minSearch}, {maxSerach}";
                     MySqlCommand cmd = new MySqlCommand(query, connect);
                     cmd.Parameters.AddWithValue("@nameObject", "%" + nameObject + "%");
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable table = new DataTable();
                     adapter.Fill(table);
                     dataGridView1.DataSource = table;
+                    this.dataGridView1.Columns["id"].Visible = false;
+                    countRow = dataGridView1.RowCount;
+                    countContracts.Text = $"Количество строк: {countRow}";
                     connect.Close();
                 }
                 catch(Exception ex)
@@ -281,7 +275,7 @@ namespace Security
                 try
                 {
                     connect.Open();
-                    MySqlCommand filterObject = new MySqlCommand($"SELECT client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract WHERE client LIKE @clientInfo", connect);
+                    MySqlCommand filterObject = new MySqlCommand($"SELECT id, client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract WHERE client LIKE @clientInfo LIMIT {minSearch}, {maxSerach}", connect);
                     filterObject.Parameters.AddWithValue("@clientInfo", clientInfo);
                     filterObject.ExecuteNonQuery();
                     MySqlDataAdapter adapter = new MySqlDataAdapter(filterObject);
@@ -292,6 +286,9 @@ namespace Security
                     {
                         InfoContracts();
                     }
+                    this.dataGridView1.Columns["id"].Visible = false;
+                    countRow = dataGridView1.RowCount;
+                    countContracts.Text = $"Количество строк: {countRow}";
                     connect.Close();
                 }
                 catch (Exception ex)
@@ -313,7 +310,7 @@ namespace Security
                 try
                 {
                     connect.Open();
-                    MySqlCommand filterObject = new MySqlCommand($"SELECT client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract WHERE type_security LIKE @typeSecurity", connect);
+                    MySqlCommand filterObject = new MySqlCommand($"SELECT client AS 'Клиент', name_object AS 'Наименование объекта', adress AS 'Адрес', type_object AS 'Тип объекта', status AS 'Статус', type_security AS 'Тип охраны' FROM contract WHERE type_security LIKE @typeSecurity LIMIT {minSearch}, {maxSerach}", connect);
                     filterObject.Parameters.AddWithValue("@typeObject", typeSecurity);
                     filterObject.ExecuteNonQuery();
                     MySqlDataAdapter adapter = new MySqlDataAdapter(filterObject);
@@ -324,6 +321,9 @@ namespace Security
                     {
                         InfoContracts();
                     }
+                    this.dataGridView1.Columns["id"].Visible = false;
+                    countRow = dataGridView1.RowCount;
+                    countContracts.Text = $"Количество строк: {countRow}";
                     connect.Close();
                 }
                 catch (Exception ex)
@@ -356,6 +356,74 @@ namespace Security
             this.Hide();
             EditContract editContract = new EditContract();
             editContract.Show();
+        }
+
+        // navigation
+
+        private void ButtonNext_Click(object sender, EventArgs e)
+        {
+            if (maxSerach <= countRow)
+            {
+                minSearch += 20;
+                if(minSearch == 20)
+                {
+                    countPage.Text = "2";
+                }
+                else if(minSearch == 40)
+                {
+                    countPage.Text = "3";
+                }
+                else if (minSearch == 60)
+                {
+                    countPage.Text = "4";
+                }
+                else if (minSearch == 80)
+                {
+                    countPage.Text = "5";
+                }
+                InfoContracts();
+            }
+            else
+            {
+                minSearch = 0;
+                maxSerach = 20;
+                InfoContracts();
+            }
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            if (minSearch != 0)
+            {
+                minSearch -= 20;
+                if(minSearch == 0)
+                {
+                    countPage.Text = "1";
+                }
+                else if (minSearch == 20)
+                {
+                    countPage.Text = "2";
+                }
+                else if (minSearch == 40)
+                {
+                    countPage.Text = "3";
+                }
+                else if (minSearch == 60)
+                {
+                    countPage.Text = "4";
+                }
+                else if (minSearch == 80)
+                {
+                    countPage.Text = "5";
+                }
+                InfoContracts();
+            }
+            else
+            {
+                minSearch = countRow + 1;
+                maxSerach = 20;
+                InfoContracts();
+            }
         }
     }
 }

@@ -66,8 +66,8 @@ namespace Security
                 if(boxPassword.Text == "admin1")
                 {
                     this.Hide();
-                    Contracts menu = new Contracts();
-                    menu.Show();
+                    Contracts pagination = new Contracts();
+                    pagination.Show();
                 }
                 else
                 {

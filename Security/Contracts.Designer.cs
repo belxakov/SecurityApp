@@ -29,8 +29,8 @@ namespace Security
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contracts));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.goMenu = new System.Windows.Forms.Button();
@@ -47,13 +47,14 @@ namespace Security
             this.labClient = new System.Windows.Forms.Label();
             this.boxNameObj = new System.Windows.Forms.TextBox();
             this.countContracts = new System.Windows.Forms.Label();
-            this.navLink = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.buttonNext = new System.Windows.Forms.Label();
-            this.buttonBack = new System.Windows.Forms.Label();
+            this.ButtonNext = new System.Windows.Forms.PictureBox();
+            this.buttonBack = new System.Windows.Forms.PictureBox();
+            this.countPage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageFilter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageNoFilter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonBack)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -62,24 +63,24 @@ namespace Security
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Location = new System.Drawing.Point(16, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -228,45 +229,35 @@ namespace Security
             this.countContracts.TabIndex = 15;
             this.countContracts.Text = "Количество записей: ";
             // 
-            // navLink
+            // ButtonNext
             // 
-            this.navLink.AutoSize = true;
-            this.navLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.navLink.Location = new System.Drawing.Point(16, 436);
-            this.navLink.Name = "navLink";
-            this.navLink.Size = new System.Drawing.Size(14, 13);
-            this.navLink.TabIndex = 16;
-            this.navLink.Text = "1";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(430, 420);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 20);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "1";
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.AutoSize = true;
-            this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNext.Location = new System.Drawing.Point(479, 425);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(26, 13);
-            this.buttonNext.TabIndex = 21;
-            this.buttonNext.Text = "--->";
+            this.ButtonNext.Image = ((System.Drawing.Image)(resources.GetObject("ButtonNext.Image")));
+            this.ButtonNext.Location = new System.Drawing.Point(513, 418);
+            this.ButtonNext.Name = "ButtonNext";
+            this.ButtonNext.Size = new System.Drawing.Size(54, 29);
+            this.ButtonNext.TabIndex = 17;
+            this.ButtonNext.TabStop = false;
+            this.ButtonNext.Click += new System.EventHandler(this.ButtonNext_Click);
             // 
             // buttonBack
             // 
-            this.buttonBack.AutoSize = true;
-            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonBack.Location = new System.Drawing.Point(377, 425);
+            this.buttonBack.Image = ((System.Drawing.Image)(resources.GetObject("buttonBack.Image")));
+            this.buttonBack.Location = new System.Drawing.Point(328, 418);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(26, 13);
-            this.buttonBack.TabIndex = 22;
-            this.buttonBack.Text = "<---";
+            this.buttonBack.Size = new System.Drawing.Size(54, 29);
+            this.buttonBack.TabIndex = 18;
+            this.buttonBack.TabStop = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // countPage
+            // 
+            this.countPage.AutoSize = true;
+            this.countPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.countPage.Location = new System.Drawing.Point(438, 422);
+            this.countPage.Name = "countPage";
+            this.countPage.Size = new System.Drawing.Size(19, 20);
+            this.countPage.TabIndex = 19;
+            this.countPage.Text = "1";
             // 
             // Contracts
             // 
@@ -274,10 +265,9 @@ namespace Security
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(984, 461);
+            this.Controls.Add(this.countPage);
             this.Controls.Add(this.buttonBack);
-            this.Controls.Add(this.buttonNext);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.navLink);
+            this.Controls.Add(this.ButtonNext);
             this.Controls.Add(this.countContracts);
             this.Controls.Add(this.boxNameObj);
             this.Controls.Add(this.boxTypeSec);
@@ -302,6 +292,8 @@ namespace Security
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageFilter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageNoFilter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,9 +316,8 @@ namespace Security
         private System.Windows.Forms.Label labClient;
         private System.Windows.Forms.TextBox boxNameObj;
         private System.Windows.Forms.Label countContracts;
-        private System.Windows.Forms.Label navLink;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label buttonNext;
-        private System.Windows.Forms.Label buttonBack;
+        private System.Windows.Forms.PictureBox ButtonNext;
+        private System.Windows.Forms.PictureBox buttonBack;
+        private System.Windows.Forms.Label countPage;
     }
 }
