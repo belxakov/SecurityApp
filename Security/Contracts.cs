@@ -412,10 +412,6 @@ namespace Security
                 {
                     countPage.Text = "4";
                 }
-                else if (minSearch == 80)
-                {
-                    countPage.Text = "5";
-                }
                 InfoContracts();
             }
             else
@@ -423,6 +419,45 @@ namespace Security
                 minSearch = countRow + 1;
                 maxSerach = 20;
                 InfoContracts();
+            }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Статус") // Проверяем имя колонки
+                {
+                    var CellValue = dataGridView1.Rows[e.RowIndex].Cells["Статус"].Value;
+                    if (CellValue != null)
+                    {
+                        string status = CellValue.ToString();
+                        switch (status)
+                        {
+                            case "Активен":
+                                e.CellStyle.BackColor = Color.LightGreen;
+                                break;
+                            case "активный":
+                                e.CellStyle.BackColor = Color.LightGreen;
+                                break;
+                            case "ожидает подписи":
+                                e.CellStyle.BackColor = Color.Bisque;
+                                break;
+                            case "Неактивен":
+                                e.CellStyle.BackColor = Color.Orange;
+                                break;
+                            case "Завершен":
+                                e.CellStyle.BackColor = Color.OrangeRed;
+                                break;
+                            case "закрыт":
+                                e.CellStyle.BackColor = Color.OrangeRed;
+                                break;
+                            default:
+                                e.CellStyle.BackColor = Color.White; // Если статус не распознан
+                                break;
+                        }
+                    }
+                }
             }
         }
     }
