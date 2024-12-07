@@ -93,6 +93,18 @@
     <Compile Include="LoadBackup.Designer.cs">
       <DependentUpon>LoadBackup.cs</DependentUpon>
     </Compile>
+    <Compile Include="LocalAdmin\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalAdmin\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalAdmin\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalAdmin\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,12 +131,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SecurityObjects.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SecurityObjects.Designer.cs">
-      <DependentUpon>SecurityObjects.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoadBackup.resx">
       <DependentUpon>LoadBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalAdmin\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalAdmin\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -167,9 +179,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SecurityObjects.resx">
-      <DependentUpon>SecurityObjects.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

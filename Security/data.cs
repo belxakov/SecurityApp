@@ -17,5 +17,7 @@ namespace Security
         static public string uPatronymic;
         static public string uCard;
         static public string uRole;
+        // block system
+        static public int inactivityTime = 30000;
     }
 }
