@@ -164,13 +164,6 @@ namespace Security
             clients.Show();
         }
 
-        private void listObject_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            SecurityObjects sObject = new SecurityObjects();
-            sObject.Show();
-        }
-
         private void importData_Click(object sender, EventArgs e)
         {
             this.Hide();
