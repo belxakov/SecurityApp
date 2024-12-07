@@ -90,6 +90,23 @@ namespace Security
                 this.dataGridView1.Columns["id"].Visible = false;
                 countRow = dataGridView1.RowCount;
                 countContracts.Text = $"Количество строк: {countRow}";
+
+                foreach (DataRow row in table.Rows)
+                {
+                    string client = row["Клиент"].ToString();
+                    string nameObject = row["Наименование объекта"].ToString();
+                    if(client.Length > 3)
+                    {
+                        client = client.Substring(0, 3) + new string('*', client.Length - 3);
+                    }
+                    if(nameObject.Length > 6)
+                    {
+                        nameObject = nameObject.Substring(0, 6) + new string('*', nameObject.Length - 6);
+                    }
+                    row["Клиент"] = client;
+                    row["Наименование объекта"] = nameObject;
+                }
+
                 connect.Close();
             }
             catch(Exception ex)
