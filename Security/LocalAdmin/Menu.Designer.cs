@@ -54,6 +54,7 @@ namespace Security.LocalAdmin
             this.backupDataButton.TabIndex = 0;
             this.backupDataButton.Text = "Восстановить структуру базы данных";
             this.backupDataButton.UseVisualStyleBackColor = false;
+            this.backupDataButton.Click += new System.EventHandler(this.backupDataButton_Click);
             // 
             // dataImportButton
             // 
@@ -67,6 +68,7 @@ namespace Security.LocalAdmin
             this.dataImportButton.TabIndex = 1;
             this.dataImportButton.Text = "Импорт данных";
             this.dataImportButton.UseVisualStyleBackColor = false;
+            this.dataImportButton.Click += new System.EventHandler(this.dataImportButton_Click);
             // 
             // showContractButton
             // 
@@ -108,6 +110,7 @@ namespace Security.LocalAdmin
             this.closeAppButton.TabIndex = 4;
             this.closeAppButton.Text = "Выход";
             this.closeAppButton.UseVisualStyleBackColor = false;
+            this.closeAppButton.Click += new System.EventHandler(this.closeAppButton_Click);
             // 
             // labStatus
             // 

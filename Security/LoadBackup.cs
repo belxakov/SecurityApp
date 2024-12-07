@@ -59,7 +59,9 @@ namespace Security
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            LocalAdmin.Menu menu = new LocalAdmin.Menu();
+            menu.Show();
         }
     }
 }

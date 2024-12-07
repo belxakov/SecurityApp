@@ -105,6 +105,12 @@
     <Compile Include="LocalAdmin\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="LocalAdmin\ShowContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalAdmin\ShowContract.Designer.cs">
+      <DependentUpon>ShowContract.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LocalAdmin\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalAdmin\ShowContract.resx">
+      <DependentUpon>ShowContract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

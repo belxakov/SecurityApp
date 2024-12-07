@@ -25,6 +25,7 @@ namespace Security.LocalAdmin
         {
             this.MouseMove += ResetInactivityTimer;
             this.KeyPress += ResetInactivityTimer;
+            return;
         }
 
         private void InactivityTimer()
@@ -64,6 +65,32 @@ namespace Security.LocalAdmin
             this.Hide();
             Contracts contracts = new Contracts();
             contracts.Show();
+            return;
+        }
+
+        private void backupDataButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoadBackup backup = new LoadBackup();
+            backup.Show();
+            return;
+        }
+
+        private void dataImportButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Import import = new Import();
+            import.Show();
+            return;
+        }
+
+        private void closeAppButton_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Вы уверены, что хотите выйти?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+                return;
+            }
             return;
         }
     }

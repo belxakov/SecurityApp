@@ -23,6 +23,7 @@ namespace Security
             Client();
             SystemInactive();
             InactivityTimer();
+            InitContextMenu();
             labNameObj.Visible = false;
             labTypeObj.Visible = false;
             labSort.Visible = false;
@@ -76,6 +77,29 @@ namespace Security
             return;
         }
 
+        private void InitContextMenu()
+        {
+            ContextMenuStrip contextMenu = new ContextMenuStrip();
+            ToolStripMenuItem showContract = new ToolStripMenuItem("Посмотреть");
+            showContract.Click += ShowContract_Click;
+            contextMenu.Items.Add(showContract);
+            dataGridView1.ContextMenuStrip = contextMenu;
+        }
+
+        private void ShowContract_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectIndex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectRow = dataGridView1.Rows[selectIndex];
+                int id = Convert.ToInt32(selectRow.Cells["id"].Value);
+                LocalAdmin.ShowContract showContract = new LocalAdmin.ShowContract(id);
+                this.Hide();
+                showContract.Show();
+                return;
+            }
+        }
+
         private void InfoContracts()
         {
             try
@@ -97,11 +121,15 @@ namespace Security
                     string nameObject = row["Наименование объекта"].ToString();
                     if(client.Length > 3)
                     {
-                        client = client.Substring(0, 3) + new string('*', client.Length - 3);
+                        client = client.Substring(0, 8) + new string('*', client.Length - 6);
                     }
                     if(nameObject.Length > 6)
                     {
                         nameObject = nameObject.Substring(0, 6) + new string('*', nameObject.Length - 6);
+                    }
+                    else if(nameObject.Length < 6)
+                    {
+                        nameObject = nameObject.Substring(0, 3) + new string('*', nameObject.Length - 3);
                     }
                     row["Клиент"] = client;
                     row["Наименование объекта"] = nameObject;
@@ -510,6 +538,11 @@ namespace Security
                     }
                 }
             }
+        }
+
+        private void Contracts_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
