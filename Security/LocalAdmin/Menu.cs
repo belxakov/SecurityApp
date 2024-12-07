@@ -15,43 +15,9 @@ namespace Security.LocalAdmin
         public Menu()
         {
             InitializeComponent();
-            SystemInactive();
-            InactivityTimer();
+            
         }
-
-        public Timer inactivityTimer;
-
-        private void SystemInactive()
-        {
-            this.MouseMove += ResetInactivityTimer;
-            this.KeyPress += ResetInactivityTimer;
-            return;
-        }
-
-        private void InactivityTimer()
-        {
-            inactivityTimer = new Timer();
-            inactivityTimer.Interval = data.inactivityTime;
-            inactivityTimer.Tick += InactivityTimer_Tick;
-            inactivityTimer.Start();
-            return;
-        }
-
-        private void InactivityTimer_Tick(object sender, EventArgs e)
-        {
-            inactivityTimer.Stop();
-            this.Close();
-            Auth auth = new Auth();
-            auth.Show();
-            return;
-        }
-
-        private void ResetInactivityTimer(object sender, EventArgs e)
-        {
-            inactivityTimer.Start();
-            inactivityTimer.Stop();
-            return;
-        }
+        
         private void settingsButton_Click(object sender, EventArgs e)
         {
             this.Hide();

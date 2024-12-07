@@ -17,10 +17,42 @@ namespace Security
         public LoadBackup()
         {
             InitializeComponent();
+            SystemInactive();
+            InactivityTimer();
         }
 
         string connectionString = @"host=localhost;user=root;password=root;";
-        
+        private Timer inactiveTimer;
+
+        private void SystemInactive()
+        {
+            this.MouseMove += ResetInactivityTimer;
+            this.KeyPress += ResetInactivityTimer;
+        }
+        private void InactivityTimer()
+        {
+            inactiveTimer = new Timer();
+            inactiveTimer.Interval = data.inactivityTime;
+            inactiveTimer.Tick += InactiveTimer_Tick;
+            inactiveTimer.Start();
+            return;
+        }
+
+        private void InactiveTimer_Tick(object sender, EventArgs e)
+        {
+            inactiveTimer.Stop();
+            this.Hide();
+            Auth auth = new Auth();
+            auth.Show();
+            return;
+        }
+
+        private void ResetInactivityTimer(object sender, EventArgs e)
+        {
+            inactiveTimer.Start();
+            inactiveTimer.Stop();
+        }
+
         private void RecoveryDatabase(string filePath)
         {
             string script = File.ReadAllText(filePath);

@@ -23,7 +23,7 @@ namespace Security
         }
 
         string connectionString = data.connectionString;
-        public Timer inactivityTimer;
+        private Timer inactivityTimer;
 
         private void SystemInactive()
         {
@@ -43,7 +43,7 @@ namespace Security
         private void InactivityTimer_Tick(object sender, EventArgs e)
         {
             inactivityTimer.Stop();
-            this.Close();
+            this.Hide();
             Auth auth = new Auth();
             auth.Show();
             return;

@@ -44,7 +44,7 @@ namespace Security
         public int minSearch = 0;
         public int maxSerach = 20;
         public int countRow;
-        public Timer inactivityTimer;
+        private Timer inactivityTimer;
 
         private void SystemInactive()
         {
@@ -64,7 +64,7 @@ namespace Security
         private void InactivityTimer_Tick(object sender, EventArgs e)
         {
             inactivityTimer.Stop();
-            this.Close();
+            this.Hide();
             Auth auth = new Auth();
             auth.Show();
             return;
@@ -456,10 +456,6 @@ namespace Security
                 {
                     countPage.Text = "4";
                 }
-                else if (minSearch == 80)
-                {
-                    countPage.Text = "5";
-                }
                 InfoContracts();
             }
             else
@@ -479,7 +475,7 @@ namespace Security
                 {
                     countPage.Text = "1";
                 }
-                else if (minSearch == 20)
+               else if (minSearch == 20)
                 {
                     countPage.Text = "2";
                 }
@@ -543,6 +539,44 @@ namespace Security
         private void Contracts_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void page1_Click(object sender, EventArgs e)
+        {
+            minSearch = 0;
+            maxSerach = 20;
+            InfoContracts();
+            countPage.Text = "1";
+        }
+
+        private void page2_Click(object sender, EventArgs e)
+        {
+            minSearch += 20;
+            if(minSearch == 40)
+            {
+                InfoContracts();
+                countPage.Text = "2";
+            }
+        }
+
+        private void page3_Click(object sender, EventArgs e)
+        {
+            minSearch += 40;
+            if (minSearch == 60)
+            {
+                InfoContracts();
+                countPage.Text = "3";
+            }
+        }
+
+        private void page4_Click(object sender, EventArgs e)
+        {
+            minSearch += 60;
+            if (minSearch == 80)
+            {
+                InfoContracts();
+                countPage.Text = "4";
+            }
         }
     }
 }
