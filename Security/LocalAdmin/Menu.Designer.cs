@@ -34,6 +34,12 @@ namespace Security.LocalAdmin
             this.showContractButton = new System.Windows.Forms.Button();
             this.settingsButton = new System.Windows.Forms.Button();
             this.closeAppButton = new System.Windows.Forms.Button();
+            this.labStatus = new System.Windows.Forms.Label();
+            this.labIndCard = new System.Windows.Forms.Label();
+            this.labPatronymic = new System.Windows.Forms.Label();
+            this.labName = new System.Windows.Forms.Label();
+            this.labSurname = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // backupDataButton
@@ -103,19 +109,96 @@ namespace Security.LocalAdmin
             this.closeAppButton.Text = "Выход";
             this.closeAppButton.UseVisualStyleBackColor = false;
             // 
+            // labStatus
+            // 
+            this.labStatus.AutoSize = true;
+            this.labStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labStatus.ForeColor = System.Drawing.Color.Black;
+            this.labStatus.Location = new System.Drawing.Point(285, 274);
+            this.labStatus.Name = "labStatus";
+            this.labStatus.Size = new System.Drawing.Size(182, 24);
+            this.labStatus.TabIndex = 20;
+            this.labStatus.Text = "Статус: LocalAdmin";
+            // 
+            // labIndCard
+            // 
+            this.labIndCard.AutoSize = true;
+            this.labIndCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labIndCard.ForeColor = System.Drawing.Color.Black;
+            this.labIndCard.Location = new System.Drawing.Point(285, 249);
+            this.labIndCard.Name = "labIndCard";
+            this.labIndCard.Size = new System.Drawing.Size(310, 24);
+            this.labIndCard.TabIndex = 19;
+            this.labIndCard.Text = "Служебное удостоверение: none";
+            // 
+            // labPatronymic
+            // 
+            this.labPatronymic.AutoSize = true;
+            this.labPatronymic.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labPatronymic.ForeColor = System.Drawing.Color.Black;
+            this.labPatronymic.Location = new System.Drawing.Point(285, 178);
+            this.labPatronymic.Name = "labPatronymic";
+            this.labPatronymic.Size = new System.Drawing.Size(103, 24);
+            this.labPatronymic.TabIndex = 18;
+            this.labPatronymic.Text = "Отчество:";
+            // 
+            // labName
+            // 
+            this.labName.AutoSize = true;
+            this.labName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labName.ForeColor = System.Drawing.Color.Black;
+            this.labName.Location = new System.Drawing.Point(285, 139);
+            this.labName.Name = "labName";
+            this.labName.Size = new System.Drawing.Size(111, 24);
+            this.labName.TabIndex = 17;
+            this.labName.Text = "Имя: Admin";
+            // 
+            // labSurname
+            // 
+            this.labSurname.AutoSize = true;
+            this.labSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labSurname.ForeColor = System.Drawing.Color.Black;
+            this.labSurname.Location = new System.Drawing.Point(285, 97);
+            this.labSurname.Name = "labSurname";
+            this.labSurname.Size = new System.Drawing.Size(146, 24);
+            this.labSurname.TabIndex = 16;
+            this.labSurname.Text = "Фамилия: Local";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(283, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(384, 31);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Информация о пользователе";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(799, 321);
+            this.Controls.Add(this.labStatus);
+            this.Controls.Add(this.labIndCard);
+            this.Controls.Add(this.labPatronymic);
+            this.Controls.Add(this.labName);
+            this.Controls.Add(this.labSurname);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.closeAppButton);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.showContractButton);
             this.Controls.Add(this.dataImportButton);
             this.Controls.Add(this.backupDataButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,5 +209,11 @@ namespace Security.LocalAdmin
         private System.Windows.Forms.Button showContractButton;
         private System.Windows.Forms.Button settingsButton;
         private System.Windows.Forms.Button closeAppButton;
+        private System.Windows.Forms.Label labStatus;
+        private System.Windows.Forms.Label labIndCard;
+        private System.Windows.Forms.Label labPatronymic;
+        private System.Windows.Forms.Label labName;
+        private System.Windows.Forms.Label labSurname;
+        private System.Windows.Forms.Label label1;
     }
 }

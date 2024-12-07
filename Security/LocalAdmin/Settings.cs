@@ -22,7 +22,7 @@ namespace Security.LocalAdmin
             int inactiveTime;
             if (int.TryParse(boxSettingsInactive.Text, out inactiveTime))
             {
-                data.inactivityTime = inactiveTime;
+                data.inactivityTime = inactiveTime * 1000;
                 MessageBox.Show("Данные изменены!");
                 this.Hide();
                 LocalAdmin.Menu menu = new LocalAdmin.Menu();

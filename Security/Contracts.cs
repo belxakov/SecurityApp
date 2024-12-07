@@ -101,7 +101,7 @@ namespace Security
         private void goMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainMenu menu = new MainMenu();
+            LocalAdmin.Menu menu = new LocalAdmin.Menu();
             menu.Show();
         }
 

@@ -74,7 +74,11 @@ namespace Security.LocalAdmin
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSaveSettings);
             this.Controls.Add(this.boxSettingsInactive);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Settings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
             this.ResumeLayout(false);
             this.PerformLayout();
